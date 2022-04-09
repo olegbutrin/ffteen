@@ -2,7 +2,7 @@
 
 Игра 15 с использованием ReactJS
 
-![Иллюстрация к проекту](https://github.com/olegbutrin/react-calc-constructor/blob/gh-pages/images/ffteen.png)
+![Иллюстрация к проекту](https://github.com/olegbutrin/react-calc-constructor/blob/stage-1/images/ffteen.png)
 
 [ffTeen Game!](https://olegbutrin.github.io/ffteen/) на GithubPages.
 

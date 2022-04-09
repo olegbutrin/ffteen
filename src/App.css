@@ -1,38 +1,190 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  width: 100vw;
 }
 
-.App-link {
-  color: #61dafb;
+.Canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+.Game {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: peru;
+  font-weight: 800;
+}
+
+.Board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  background-color: peru;
+  border-radius: 8px;
+  border-color: peru;
+  border-style: solid;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.Win {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: peru;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  font-weight: 600;
+}
+
+.Chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: blanchedalmond;
+  border-radius: 8px;
+  border: solid burlywood;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: peru;
+  cursor: pointer;
+}
+
+.Empty {
+  background-color: unset;
+}
+
+.Counter {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: peru;
+}
+
+.Restart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: peru;
+  color: blanchedalmond;
+  font-weight: 600;
+  border-radius: 8px;
+  border: solid burlywood;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.Footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: peru;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.Footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media screen and (orientation: portrait) {
+  .Game {
+    font-size: 5vw;
+    margin-bottom: 1vw;
   }
-  to {
-    transform: rotate(360deg);
+  .Board {
+    height: 40vw;
+    width: 40vw;
+    row-gap: 0.3vw;
+    column-gap: 0.3vw;
+    border-width: 0.5vw;
+  }
+  .Win {
+    height: 40vw;
+    width: 40vw;
+    font-size: 8vw;
+  }
+  .Chip {
+    border-width: 0.6vw;
+    font-size: 5vw;
+  }
+  .Counter {
+    font-size: 2.6vw;
+    padding-bottom: 3vw;
+    padding-top: 3vw;
+  }
+  .Restart {
+    font-size: 2vw;
+    border-width: 0.3vw;
+    margin: 2vw 0;
+    padding: 0 2vw;
+  }
+  .Footer {
+    font-size: 2vw;
+    margin: 3vw 0 0 0;
+    letter-spacing: 1vw;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .Game {
+    font-size: 5vh;
+    margin-bottom: 1vh;
+  }
+  .Board {
+    height: 40vh;
+    width: 40vh;
+    row-gap: 0.3vh;
+    column-gap: 0.3vh;
+    border-width: 0.5vh;
+  }
+  .Win {
+    height: 40vh;
+    width: 40vh;
+    font-size: 8vh;
+  }
+  .Chip {
+    border-width: 0.6vh;
+    font-size: 5vh;
+  }
+  .Counter {
+    font-size: 2.6vh;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+  }
+  .Restart {
+    font-size: 2vh;
+    border-width: 0.3vh;
+    margin: 2vh 0;
+    padding: 0 2vh;
+  }
+  .Footer {
+    font-size: 2vh;
+    margin: 3vh 0 0 0;
+    letter-spacing: 1vh;
   }
 }

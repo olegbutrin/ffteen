@@ -138,7 +138,7 @@ const gameProps = {
 
 const footerProps = {
   text: "[ source code ]",
-  href: "#",
+  href: "https://github.com/olegbutrin/ffteen",
   cls: "Footer",
 };
 

@@ -22,19 +22,18 @@ const nextStep = new Map([
   [15, [11, 14]],
 ]);
 
+const oddColumns = [4, 5, 6, 7, 12, 13, 14, 15];
+
 const isPlayable = (chipArray) => {
   const parity = chipArray
-    .filter((item) => {
-      return item !== "16";
-    })
     .map((item, index, arr) => {
-      return arr.slice(index).filter((next) => {
+      return item === "16" ? 0 : arr.slice(index).filter((next) => {
         return parseInt(next) < parseInt(item);
       }).length;
     });
   const summ = parity.reduce((prev, value) => {
     return prev + value;
-  });
+  }) + oddColumns.includes(chipArray.indexOf("16")) ? 1 : 0;
   return summ % 2 === 0;
 };
 
@@ -73,7 +72,7 @@ const Game = ({ text, cls }) => {
 const Footer = ({ text, href, cls }) => {
   return (
     <div className={cls}>
-      <a href={href} target={"_blank"}>
+      <a href={href} target={"_blank"} rel={"noreferrer"}>
         {text}
       </a>
     </div>
@@ -172,10 +171,9 @@ function App() {
   };
 
   const restart = () => {
-    const shuffledChips = getPlayableShuffle(rawChips);
     setStep(0);
     setWin(false);
-    setChips(shuffledChips);
+    setChips(getPlayableShuffle(rawChips));
   };
 
   return (

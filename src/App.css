@@ -19,6 +19,7 @@
   flex-direction: row;
   align-items: stretch;
   justify-content: space-between;
+  user-select: none;
 }
 
 .Game {

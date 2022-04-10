@@ -22,7 +22,7 @@ const nextStep = new Map([
   [15, [11, 14]],
 ]);
 
-const oddColumns = [4, 5, 6, 7, 12, 13, 14, 15];
+const evenColumns = [0, 1, 2, 3, 8, 9, 10, 11];
 
 const isPlayable = (chipArray) => {
   const parity = chipArray
@@ -33,8 +33,9 @@ const isPlayable = (chipArray) => {
     });
   const summ = parity.reduce((prev, value) => {
     return prev + value;
-  }) + oddColumns.includes(chipArray.indexOf("16")) ? 1 : 0;
-  return summ % 2 === 0;
+  }) ;
+  
+  return (evenColumns.includes(chipArray.indexOf("16")) ? summ + 1 : summ)  % 2 === 0;
 };
 
 const getPlayableShuffle = (chipArray) => {
